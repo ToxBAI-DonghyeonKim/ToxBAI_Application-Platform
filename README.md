@@ -61,3 +61,89 @@ Run the main prediction script after setting the required paths and options in `
 Run:
 ```bash
 bash launcher_local.sh
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+## 입력 명세서 초안
+
+파일명 예시는 `INPUT_SPECIFICATION.md`로 두면 좋습니다.
+
+```markdown
+# Prediction Input Specification
+
+## Purpose
+This document describes the input format required to run prediction in the ToxBAI Application Platform.
+
+Users must prepare an Excel file based on:
+- `prediction_input_template.xlsx`
+
+## Input File Format
+- File type: `.xlsx`
+- Required template: `prediction_input_template.xlsx`
+
+The input file must follow the same sheet structure and column format as the template.
+
+## Input Contents
+The prediction input file is used to provide:
+1. compound information
+2. assay information for prediction
+
+## Compound Information
+Users should provide the compounds to be evaluated.
+
+Typical required fields are expected to include:
+- compound identifier
+- chemical structure representation such as SMILES
+
+If multiple compounds are submitted, each compound should occupy one row.
+
+## Assay Information
+Users should specify which assay predictions they want to run.
+
+Typical required fields are expected to include:
+- assay name or assay list
+- target model group if needed
+
+Only assays supported by the models stored in this repository can be predicted.
+
+## Required Rule
+Users must not modify:
+- sheet names
+- required column names
+- overall input template structure
+
+Changing the template structure may cause the prediction script to fail.
+
+## Expected Workflow
+1. Copy `prediction_input_template.xlsx`
+2. Enter compound information
+3. Enter assay selection information
+4. Save the Excel file
+5. Run the prediction pipeline
+6. Check the generated output file
+
+## Important Constraints
+- Input must follow the template exactly.
+- Unsupported assay names may fail during prediction.
+- Invalid or unparsable chemical structures may fail during fingerprint generation.
+- The system assumes that the requested assays correspond to existing pre-trained models.
+
+## Recommended Validation Before Run
+Before execution, confirm:
+- the Excel file is saved in `.xlsx` format
+- all required sheets are present
+- all mandatory columns are filled
+- SMILES strings are valid
+- assay names match supported model names
+
+## Platform Integration Notes
+For implementation in an open platform, the following UI/API fields are recommended:
+- compound_id
+- smiles
+- assay_name
+
+The platform should validate:
+- empty fields
+- invalid SMILES
+- unsupported assay names
+- duplicated records if necessary
