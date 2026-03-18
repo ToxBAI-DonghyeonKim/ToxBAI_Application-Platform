@@ -1,0 +1,29 @@
+# 기본 과학/수치 계산
+numpy==1.26.4
+scipy==1.14.1
+pandas==2.2.2
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# 머신러닝/모델링
+scikit-learn==1.5.2
+imbalanced-learn==0.12.3
+xgboost==2.1.1
+joblib==1.4.2
+threadpoolctl==3.5.0
+
+# 딥러닝 프레임워크
+torch==2.3.1
+torchvision==0.18.1
+torchaudio==2.3.1
+torch-geometric==2.6.1
+torchdata==0.11.0
+
+# 화학정보학/분자
+rdkit==2024.3.5
+umap-learn==0.5.7
+
+# 유틸
+tqdm==4.66.4        # (네 리스트에선 build path 버전이라 최신 pip 버전으로 정리)
+requests==2.32.3
+PyYAML==6.0.2
