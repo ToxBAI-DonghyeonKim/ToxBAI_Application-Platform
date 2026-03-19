@@ -23,7 +23,7 @@ VERSION = 1
 # Only change PROJECT_NAME for each run. The experiment directory must exist
 # under ``experiments/`` and contain the required inputs for the selected version.
 PROJECT_NAME = "ToxBAI_screening"
-REF_FILE_PATH = Path('/home1/won0316/_RESEARCH/0817_Genotoxicity/1_Git_upload/ChemBAI/ToxCast_model/data/ToxCast_v.4.1_v.2/fingerprints')
+REF_FILE_PATH = Path('./experiments/prediction/ToxBAI_screening/fingerprints')
 
 
 
