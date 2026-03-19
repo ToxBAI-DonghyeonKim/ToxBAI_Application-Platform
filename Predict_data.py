@@ -7,7 +7,7 @@ from datetime import datetime
 import json
 import numpy as np
 
-from toxcast_pkg.common import read_data_with_smiles, _standardize_columns
+from common import read_data_with_smiles, _standardize_columns
 
 
 def _tanimoto_max(test_fp: np.ndarray, train_fps: np.ndarray) -> float:
